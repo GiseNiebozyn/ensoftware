@@ -1,0 +1,83 @@
+.about-section {
+  padding: 100px 20px;
+  background: radial-gradient(circle at top right, #0d0a1a, #050308); /* Fondo profundo */
+  color: white;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tagline {
+  color: #00e5ff; /* Cian */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.highlight {
+  background: linear-gradient(45deg, #7c4dff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: #7c4dff;
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+/* Contenedor de las tarjetas de valores */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+}
+
+/* EFECTO DE ILUMINACIÓN AL PASAR EL MOUSE */
+.value-card:hover {
+  background: rgba(124, 77, 255, 0.05);
+  border-color: #00e5ff;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+}
+
+.value-card mat-icon {
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+  color: #7c4dff;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.value-card:hover mat-icon {
+  color: #00e5ff; /* Cambia a cian al hacer hover */
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.value-card p {
+  color: #b0b0b0;
+  line-height: 1.6;
+}

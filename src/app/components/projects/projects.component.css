@@ -1,0 +1,106 @@
+.portfolio {
+  background: #0f0a17; /* Un tono más oscuro para contraste */
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 165, 0, 0.15); /* Borde naranja sutil */
+  transition: all 0.4s ease;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: #ffa500;
+  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.1);
+}
+
+.project-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.api-bg {
+  background: linear-gradient(45deg, #1a1a1a, #2c1a4d);
+}
+
+.big-icon {
+  font-size: 80px;
+  color: #ffa500;
+  opacity: 0.5;
+}
+
+.status-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffa500;
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-info h3 {
+  margin: 0 0 15px 0;
+  color: #ffa500;
+}
+
+.project-tags {
+  margin: 15px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-tags span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.project-links a {
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.project-links a:hover {
+  color: #ffa500;
+}
+
+.no-link {
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+}

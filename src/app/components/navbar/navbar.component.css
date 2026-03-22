@@ -1,0 +1,66 @@
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}.custom-navbar {
+  position: fixed; /* Para que te siga mientras scroleas */
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 10, 23, 0.8) !important; /* Fondo oscuro traslúcido */
+  backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 5%;
+  height: 70px !important;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* El detalle en color para "Software" */
+.logo span {
+  background: linear-gradient(45deg, #7c4dff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Estilo para los botones */
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Efecto de línea naranja al pasar el mouse (hover) */
+.nav-links a:hover {
+  color: #ffa500 !important;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 50%;
+  background: #ffa500;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+  width: 70%;
+}

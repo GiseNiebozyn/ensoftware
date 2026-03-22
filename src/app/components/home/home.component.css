@@ -1,0 +1,218 @@
+.home {
+  position: relative;
+  text-align: center;
+  padding: 150px 20px; /* Aumentamos el padding para que sea más alta */
+  min-height: 80vh;    /* Ocupa el 80% de la altura de la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white; /* Color de texto para que resalte sobre la imagen */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../../assets/gata.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  
+  /* Estado inicial: Invisible y un poco más grande para el efecto de zoom */
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* Cuando se añade la clase .loaded desde el TS */
+.home.loaded .background-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+/* Estilo para los textos para que se vean mejor sobre la imagen */
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.content p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.tech {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #fcfcfc; /* Un fondo casi blanco para diferenciar secciones */
+}
+
+.tech h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  position: relative;
+}
+
+/* Una rayita decorativa debajo del título */
+.tech-list {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Asegura que todos estén alineados a la misma altura */
+  gap: 15px;
+  flex-wrap: nowrap; /* CAMBIO CLAVE: Evita que los elementos salten de línea */
+  overflow-x: auto;  /* Si la pantalla es muy pequeña (celular), permite hacer scroll lateral en vez de romperse */
+  padding: 10px 0;
+}
+
+.tech-list span {
+  white-space: nowrap; /* Evita que el texto "Java Script" se parta en dos líneas */
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.tech-card {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 120px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+/* Mantenemos tu hover */
+.tech-list span:hover {
+  background-color: #f3f3f3;
+}
+
+.tech-card i {
+  font-size: 2.5rem;
+  color: #555; /* Color base de los iconos */
+  transition: color 0.3s ease;
+}
+
+.tech-card span {
+  font-weight: 600;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* --- EFECTO HOVER --- */
+.tech-card:hover {
+  transform: translateY(-10px); /* Se eleva */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  border-color: #df1279;
+}
+
+/* Color específico por icono al hacer hover (Opcional pero genial) */
+.tech-card:hover .devicon-dotnetcore-plain { color: #512bd4; }
+.tech-card:hover .devicon-angularjs-plain { color: #dd0031; }
+.tech-card:hover .devicon-javascript-plain { color: #f7df1e; }
+.tech-card:hover .devicon-html5-plain { color: #e34f26; }
+.tech-card:hover .devicon-css3-plain { color: #1572b6; }
+
+
+.knowledge-hub {
+  background: #120b1e; /* Violeta muy oscuro, casi negro, como el espacio */
+  padding: 100px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.hub-header {
+  margin-bottom: 50px;
+}
+
+.badge {
+  background: rgba(255, 165, 0, 0.2); /* Naranja transparente */
+  color: #ffa500; /* Naranja como el aura del gato */
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hub-header h2 {
+  font-size: 2.5rem;
+  margin-top: 15px;
+  background: linear-gradient(to right, #fff, #ffa500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.05); /* Fondo muy sutil */
+  border: 1px solid rgba(255, 165, 0, 0.1); /* Borde naranja suave */
+  padding: 30px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  text-align: left;
+  backdrop-filter: blur(5px); /* Efecto vidrio */
+}
+
+.info-card:hover {
+  background: rgba(255, 165, 0, 0.1);
+  transform: translateY(-5px);
+  border-color: #ffa500; /* Resalta el naranja al pasar el mouse */
+}
+
+.card-icon {
+  color: #ffa500;
+  margin-bottom: 15px;
+}
+
+.card-icon .material-icons {
+  font-size: 2.5rem;
+}
+
+.info-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.hub-footer {
+  margin-top: 50px;
+}
+
+.hub-footer a {
+  color: #ffa500;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.hub-footer a:hover {
+  border-bottom: 2px solid #ffa500;
+}

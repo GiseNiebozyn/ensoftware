@@ -1,0 +1,89 @@
+.services {
+  /* Degradado violeta acorde a tu logo */
+  background-color: #2c2c2c;
+  color: white;
+  padding: 100px 20px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.services-header {
+  margin-bottom: 60px;
+}
+
+.pre-title {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+ color: #a0a0a0; /* Gris claro para el pre-título */
+  margin-bottom: 8px;
+}
+
+.services-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+}
+
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background-color: #ffd700; /* Dorado para resaltar */
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.services-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services-list {
+  display: grid;
+  /* Esto hace que las columnas sean automáticas según el espacio */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  border-color: #7c4dff; /* Borde violeta al hover */
+}
+
+/* Estilo para los iconos de Material */
+.icon-box {
+  font-size: 40px; /* Tamaño del icono */
+  width: 40px;
+  height: 40px;
+  color: #7c4dff; /* El violeta de tu marca */
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-card h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  background-color: transparent; /* Limpiamos estilos previos */
+}
+
+.service-card p {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+  font-size: 0.95rem;
+}

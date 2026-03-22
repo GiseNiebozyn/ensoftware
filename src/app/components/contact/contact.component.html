@@ -1,0 +1,83 @@
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    
+    <div class="contact-form-wrapper">
+      <span class="badge-contact">Contacto</span>
+      <h2>¡Hablemos de tu idea!</h2>
+      <p>Cuéntanos tu proyecto y te responderemos a la brevedad.</p>
+      
+      <form class="custom-form" (ngSubmit)="enviarFormulario()">
+        
+        <div class="input-group">
+          <input 
+            type="text" 
+            name="nombre"
+            [(ngModel)]="formData.nombre"
+            placeholder="Tu Nombre" 
+            required>
+        </div>
+
+        <div class="input-group">
+          <input 
+            type="email" 
+            name="email"
+            [(ngModel)]="formData.email"
+            placeholder="Tu Email" 
+            required>
+        </div>
+
+        <div class="input-group">
+          <textarea 
+            name="mensaje"
+            [(ngModel)]="formData.mensaje"
+            placeholder="Cuéntanos un poco sobre tu proyecto..." 
+            rows="5" 
+            required>
+          </textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          Enviar Mensaje <span class="material-icons">send</span>
+        </button>
+
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h3>Vías Directas</h3>
+      
+      <div class="info-item">
+        <span class="material-icons icon-cyan">whatsapp</span>
+        <div>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/TUNUMERO" target="_blank">+54 345 434-0619</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <span class="material-icons icon-cyan">alternate_email</span>
+        <div>
+          <h4>Gmail</h4>
+          <a href="mailto:tuemail&#64;gmail.com">niebozyngisela&#64;gmail.com</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <span class="material-icons icon-cyan">location_on</span>
+        <div>
+          <h4>Ubicación</h4>
+          <p>Villa Adela, Concordia - Entre Ríos</p>
+        </div>
+      </div>
+      
+      <div class="social-links">
+        <p>Síguenos en redes:</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
