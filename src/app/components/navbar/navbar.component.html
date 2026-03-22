@@ -5,6 +5,17 @@
 
   <span class="spacer"></span>
 
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu-btn">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu" class="custom-mobile-menu">
+    <a mat-menu-item href="#inicio">Inicio</a>
+    <a mat-menu-item href="#services">Servicios</a>
+    <a mat-menu-item href="#portfolio">Portfolio</a>
+    <a mat-menu-item href="#contacto">Contacto</a>
+  </mat-menu>
+
   <div class="nav-links">
     <a mat-button href="#inicio">Inicio</a>
     <a mat-button href="#services">Servicios</a>

@@ -64,3 +64,46 @@
 .nav-links a:hover::after {
   width: 70%;
 }
+/* --- ESTO SE AGREGA AL FINAL --- */
+
+/* 1. Ocultamos el botón de hamburguesa en pantallas grandes */
+.mobile-menu-btn {
+  display: none;
+  color: white;
+}
+
+/* 2. Reglas para CELULARES (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+  
+  /* Mostramos el botón de menú */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Escondemos los links horizontales de antes */
+  .nav-links {
+    display: none;
+  }
+
+  /* Achicamos un poquito el logo para que no ocupe todo el ancho */
+  .logo {
+    font-size: 20px;
+  }
+
+  /* Ajustamos el padding de la navbar para que el botón no quede pegado al borde */
+  .custom-navbar {
+    padding: 0 15px !important;
+  }
+}
+
+/* 3. Estilo para que el menú desplegable combine con EN Software */
+::ng-deep .mat-mdc-menu-panel {
+  background-color: rgba(15, 10, 23, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::ng-deep .mat-mdc-menu-item .mdc-list-item__primary-text {
+  color: #fff !important;
+  font-weight: 500;
+}
