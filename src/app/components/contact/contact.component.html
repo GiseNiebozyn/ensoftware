@@ -6,41 +6,53 @@
       <h2>¡Hablemos de tu idea!</h2>
       <p>Cuéntanos tu proyecto y te responderemos a la brevedad.</p>
       
-      <form class="custom-form" (ngSubmit)="enviarFormulario()">
-        
-        <div class="input-group">
-          <input 
-            type="text" 
-            name="nombre"
-            [(ngModel)]="formData.nombre"
-            placeholder="Tu Nombre" 
-            required>
-        </div>
+      <form class="custom-form" #contactForm="ngForm" (ngSubmit)="contactForm.form.valid && enviarFormulario()">
+  
+  <div class="input-group">
+    <input 
+      type="text" 
+      name="nombre"
+      [(ngModel)]="formData.nombre"
+      #nombre="ngModel"
+      placeholder="Tu Nombre" 
+      required>
+    <span class="error-text" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+      El nombre es obligatorio.
+    </span>
+  </div>
 
-        <div class="input-group">
-          <input 
-            type="email" 
-            name="email"
-            [(ngModel)]="formData.email"
-            placeholder="Tu Email" 
-            required>
-        </div>
+  <div class="input-group">
+    <input 
+      type="email" 
+      name="email"
+      [(ngModel)]="formData.email"
+      #email="ngModel"
+      placeholder="Tu Email" 
+      required
+      email> <span class="error-text" *ngIf="email.invalid && (email.dirty || email.touched)">
+      Ingresa un correo válido.
+    </span>
+  </div>
 
-        <div class="input-group">
-          <textarea 
-            name="mensaje"
-            [(ngModel)]="formData.mensaje"
-            placeholder="Cuéntanos un poco sobre tu proyecto..." 
-            rows="5" 
-            required>
-          </textarea>
-        </div>
+  <div class="input-group">
+    <textarea 
+      name="mensaje"
+      [(ngModel)]="formData.mensaje"
+      #mensaje="ngModel"
+      placeholder="Cuéntanos sobre tu proyecto..." 
+      rows="5" 
+      required
+      minlength="10"> </textarea>
+    <span class="error-text" *ngIf="mensaje.invalid && (mensaje.dirty || mensaje.touched)">
+      Cuéntanos un poco más (mínimo 10 caracteres).
+    </span>
+  </div>
 
-        <button type="submit" class="btn-submit">
-          Enviar Mensaje <span class="material-icons">send</span>
-        </button>
+  <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">
+    Enviar Mensaje <span class="material-icons">send</span>
+  </button>
 
-      </form>
+</form>
     </div>
 
     <div class="contact-info">

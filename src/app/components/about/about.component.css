@@ -8,6 +8,18 @@
   text-align: center;
   margin-bottom: 60px;
 }
+/* Este es el contenedor que envuelve los párrafos */
+.about-main-text {
+  max-width: 1200px;    /* Evita que el texto se estire de punta a punta en monitores grandes */
+  margin: 0 auto;      /* Centra el bloque entero en la pantalla */
+  text-align: center;   /* Centra cada línea de texto dentro del bloque */
+}
+
+/* Opcional: un poquito de espacio entre los párrafos para que no estén pegados */
+.about-main-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;    /* Mejora la lectura */
+}
 
 .tagline {
   color: #00e5ff; /* Cian */

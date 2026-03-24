@@ -1,13 +1,14 @@
+/* --- SECCIÓN HOME --- */
 .home {
   position: relative;
   text-align: center;
-  padding: 150px 20px; /* Aumentamos el padding para que sea más alta */
-  min-height: 80vh;    /* Ocupa el 80% de la altura de la pantalla */
+  padding: 100px 20px;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  color: white; /* Color de texto para que resalte sobre la imagen */
+  color: white;
 }
 
 .background-image {
@@ -16,18 +17,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../../assets/gata.png');
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../../assets/gata.png');
   background-size: cover;
   background-position: center;
   z-index: 0;
-  
-  /* Estado inicial: Invisible y un poco más grande para el efecto de zoom */
   opacity: 0;
   transform: scale(1.1);
   transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
-/* Cuando se añade la clase .loaded desde el TS */
 .home.loaded .background-image {
   opacity: 1;
   transform: scale(1);
@@ -37,182 +35,191 @@
   position: relative;
   z-index: 1;
   max-width: 800px;
+  margin: 0 auto; /* Centrado extra */
 }
 
-/* Estilo para los textos para que se vean mejor sobre la imagen */
-.content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.content p {
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
+/* --- SECCIÓN TECNOLOGÍAS (TECH) --- */
 .tech {
   text-align: center;
-  padding: 80px 20px;
-  background-color: #fcfcfc; /* Un fondo casi blanco para diferenciar secciones */
+  padding: 80px 5%;
+  background-color: #fcfcfc;
 }
 
 .tech h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   margin-bottom: 40px;
   color: #333;
-  position: relative;
 }
 
-/* Una rayita decorativa debajo del título */
 .tech-list {
   display: flex;
-  justify-content: center;
-  align-items: center; /* Asegura que todos estén alineados a la misma altura */
-  gap: 15px;
-  flex-wrap: nowrap; /* CAMBIO CLAVE: Evita que los elementos salten de línea */
-  overflow-x: auto;  /* Si la pantalla es muy pequeña (celular), permite hacer scroll lateral en vez de romperse */
-  padding: 10px 0;
+  justify-content: center; /* CENTRADO EN PC */
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap; /* En PC que bajen de línea si no entran */
+  padding: 20px 0;
 }
 
-.tech-list span {
-  white-space: nowrap; /* Evita que el texto "Java Script" se parta en dos líneas */
-  padding: 10px 18px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
 .tech-card {
   background: white;
-  padding: 20px 30px;
+  padding: 25px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  min-width: 120px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  gap: 12px;
+  width: 140px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   border: 1px solid #eee;
 }
-/* Mantenemos tu hover */
-.tech-list span:hover {
-  background-color: #f3f3f3;
-}
 
-.tech-card i {
-  font-size: 2.5rem;
-  color: #555; /* Color base de los iconos */
-  transition: color 0.3s ease;
-}
-
-.tech-card span {
-  font-weight: 600;
-  color: #444;
-  font-size: 1rem;
-}
-
-/* --- EFECTO HOVER --- */
 .tech-card:hover {
-  transform: translateY(-10px); /* Se eleva */
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
   border-color: #df1279;
 }
 
-/* Color específico por icono al hacer hover (Opcional pero genial) */
+/* Colores de iconos */
+.tech-card i { font-size: 2.8rem; color: #555; transition: 0.3s; }
 .tech-card:hover .devicon-dotnetcore-plain { color: #512bd4; }
 .tech-card:hover .devicon-angularjs-plain { color: #dd0031; }
 .tech-card:hover .devicon-javascript-plain { color: #f7df1e; }
+.tech-card:hover .devicon-microsoftsqlserver-plain { color: #CC2927; }
+.tech-card:hover .devicon-mysql-plain { color: #00758F; }
 .tech-card:hover .devicon-html5-plain { color: #e34f26; }
 .tech-card:hover .devicon-css3-plain { color: #1572b6; }
 
-
+/* --- KNOWLEDGE HUB (GRID RESPONSIVE) --- */
 .knowledge-hub {
-  background: #120b1e; /* Violeta muy oscuro, casi negro, como el espacio */
-  padding: 100px 20px;
+  background: #120b1e;
+  padding: 100px 5%;
   color: #fff;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hub-header {
-  margin-bottom: 50px;
+  max-width: 800px;
+  margin-bottom: 60px; /* Espacio antes de las cards */
 }
 
-.badge {
-  background: rgba(255, 165, 0, 0.2); /* Naranja transparente */
-  color: #ffa500; /* Naranja como el aura del gato */
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.hub-header h2 {
-  font-size: 2.5rem;
-  margin-top: 15px;
-  background: linear-gradient(to right, #fff, #ffa500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
+/* --- KNOWLEDGE HUB (4 COLUMNAS EN PC) --- */
 .hub-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
+  /* Bajamos el mínimo a 200px para que entren las 4 en una pantalla estándar */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Un poco menos de espacio entre ellas para ganar lugar */
+  width: 100%;
+  max-width: 1300px; /* Ampliamos el ancho máximo de la sección */
   margin: 0 auto;
 }
 
 .info-card {
-  background: rgba(255, 255, 255, 0.05); /* Fondo muy sutil */
-  border: 1px solid rgba(255, 165, 0, 0.1); /* Borde naranja suave */
-  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 165, 0, 0.1);
+  padding: 20px; /* Reducimos el padding interno */
   border-radius: 15px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
   text-align: left;
-  backdrop-filter: blur(5px); /* Efecto vidrio */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.info-card:hover {
-  background: rgba(255, 165, 0, 0.1);
-  transform: translateY(-5px);
-  border-color: #ffa500; /* Resalta el naranja al pasar el mouse */
-}
-
-.card-icon {
-  color: #ffa500;
-  margin-bottom: 15px;
-}
-
-.card-icon .material-icons {
-  font-size: 2.5rem;
-}
-
+/* Achicamos los textos de la card */
 .info-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #fff;
+  font-size: 1.1rem; /* Título más chico */
+  margin-bottom: 8px;
+  color: #ffa500; /* Le damos el color naranja al título para que resalte rápido */
 }
 
 .info-card p {
-  font-size: 0.95rem;
-  color: #ccc;
-  line-height: 1.6;
+  font-size: 0.85rem; /* Párrafo más chico */
+  line-height: 1.4;
+  color: #ddd;
 }
 
+.card-icon .material-icons {
+  font-size: 2rem; /* Icono un poco más chico */
+  margin-bottom: 10px;
+}
+
+
+
+/* --- SOLUCIÓN PARA EL PÁRRAFO DE ABAJO --- */
 .hub-footer {
-  margin-top: 50px;
+  margin-top: 60px; /* Empuja el párrafo hacia abajo de las cards */
+  width: 100%;
+  padding-bottom: 20px;
+  z-index: 2; /* Asegura que esté por encima de fondos pero debajo de nada más */
+  position: relative;
 }
 
-.hub-footer a {
-  color: #ffa500;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom: 2px solid transparent;
-  transition: border 0.3s;
+.hub-footer p {
+  font-size: 1.1rem;
+  color: #ccc;
 }
 
-.hub-footer a:hover {
-  border-bottom: 2px solid #ffa500;
+/* --- KNOWLEDGE HUB (4 COLUMNAS EN PC) --- */
+.hub-grid {
+  display: grid;
+  /* Bajamos el mínimo a 200px para que entren las 4 en una pantalla estándar */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Un poco menos de espacio entre ellas para ganar lugar */
+  width: 100%;
+  max-width: 1300px; /* Ampliamos el ancho máximo de la sección */
+  margin: 0 auto;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 165, 0, 0.1);
+  padding: 20px; /* Reducimos el padding interno */
+  border-radius: 15px;
+  transition: 0.3s;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Achicamos los textos de la card */
+.info-card h3 {
+  font-size: 1.1rem; /* Título más chico */
+  margin-bottom: 8px;
+  color: #ffa500; /* Le damos el color naranja al título para que resalte rápido */
+}
+
+.info-card p {
+  font-size: 0.85rem; /* Párrafo más chico */
+  line-height: 1.5;
+  color: #ddd;
+  
+}
+
+.card-icon .material-icons {
+  font-size: 2rem; /* Icono un poco más chico */
+  margin-bottom: 10px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  /* En tablets o laptops chicas, que se pongan de a 2 */
+  .hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  /* En celulares, una sola columna */
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-card {
+    min-height: auto;
+  }
 }
