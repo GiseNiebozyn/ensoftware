@@ -276,31 +276,79 @@
 }
 
 /* ==========================================
-   6. MEDIA QUERIES (TODO EL RESPONSIVE AQUÍ)
+   6. MEDIA QUERIES (OPTIMIZADO PARA MÓVILES)
    ========================================== */
 @media (max-width: 768px) {
   
+  /* Ajuste general de secciones para que respiren */
+  .home, .tech, .about-section, .knowledge-hub, .contact-section {
+    padding: 60px 15px;
+  }
+
   /* Tech: Scroll Lateral */
   .tech-list {
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding: 20px;
+    padding: 20px 10px;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    gap: 15px;
   }
-  .tech-list::-webkit-scrollbar { display: none; }
-  .tech-card { min-width: 130px; scroll-snap-align: center; }
+  .tech-card { min-width: 120px; padding: 15px; }
 
-  /* Hub y Contacto: Una sola columna */
+  /* Hub y Contacto: Una sola columna con ajuste de ancho */
   .hub-grid, .contact-container {
     grid-template-columns: 1fr;
+    gap: 30px;
+    width: 100%;
   }
 
-  .about-main-text p { font-size: 1.1rem; }
+  /* Formulario: Aseguramos que nada se desborde */
+  .contact-form-wrapper {
+    width: 100%;
+    order: 1; /* El formulario primero */
+  }
 
+  .contact-info {
+    width: 100%;
+    padding: 25px 20px;
+    order: 2; /* La info de contacto después */
+  }
+
+  /* Títulos más adaptables */
+  .contact-form-wrapper h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-main-text p { 
+    font-size: 1rem; 
+    line-height: 1.6;
+  }
+
+  /* El botón: Ahora sí, cómodo para el pulgar */
   .btn-submit {
     width: 100%;
+    padding: 18px; /* Un poco más alto para facilitar el toque */
+    font-size: 1rem;
     justify-content: center;
+  }
+
+  /* Ajuste de iconos de contacto para que no ocupen tanto lugar */
+  .icon-cyan {
+    font-size: 1.8rem;
+  }
+  
+  .info-item a, .info-item p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Ajuste extra para celulares muy pequeños (iPhone SE, etc) */
+@media (max-width: 380px) {
+  .contact-section {
+    padding: 40px 10px;
+  }
+  .contact-form-wrapper h2 {
+    font-size: 1.5rem;
   }
 }
