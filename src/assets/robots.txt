@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Cambiá esto por tu dominio real
+Sitemap: https://ensoftware.vercel.app/sitemap.xml
